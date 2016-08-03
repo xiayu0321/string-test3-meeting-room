@@ -10,8 +10,7 @@ describe('string-test3', () => {
       {name: '睡觉', completed: false}
     ];
     let result = generateTodoHtml(todoItems);
-    let expected = `
-<section>
+    let expected = `<section>
     <header>
         <h1>todos</h1>
         <form><input type="text" autofocus="" placeholder="What needs to be done?"/></form>
@@ -47,12 +46,12 @@ describe('string-test3', () => {
         </ul>
         <button>Clear completed</button>
     </footer>
-</section>
-`
+</section>`
+    require('fs').writeFileSync('./2.txt',expected)
     expect(result).toEqual(expected);
   });
 
-  it('generate todo html with no item selected', ()=> {
+  fit('generate todo html with no item selected', ()=> {
     let todoItems = [
       {name: '吃饭', completed: false},
       {name: '练习', completed: false},
@@ -60,8 +59,7 @@ describe('string-test3', () => {
       {name: '睡觉', completed: false}
     ];
     let result = generateTodoHtml(todoItems);
-    let expected = `
-<section>
+    let expected = `<section>
     <header>
         <h1>todos</h1>
         <form><input type="text" autofocus="" placeholder="What needs to be done?"/></form>
@@ -97,8 +95,8 @@ describe('string-test3', () => {
         </ul>
         <button>Clear completed</button>
     </footer>
-</section>
-`;
+</section>`;
+    require('fs').writeFileSync('./3.txt',expected)
     expect(result).toEqual(expected);
   });
 
